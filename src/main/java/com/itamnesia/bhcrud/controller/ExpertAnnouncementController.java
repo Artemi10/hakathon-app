@@ -34,6 +34,15 @@ public class ExpertAnnouncementController {
         return announcementService.getExpertAnnouncement(userPrincipal.id());
     }
 
+    @GetMapping("/current")
+    @ApiOperation("Get current expert announcement")
+    @ApiResponses({
+            @ApiResponse(code = 200, message = "Expert announcements", response = AnnouncementDto.class)
+    })
+    public AnnouncementDto getCurrentExpertAnnouncement(@AuthenticationPrincipal UserPrincipal userPrincipal) {
+        return announcementService.getCurrentExpertAnnouncement(userPrincipal.id());
+    }
+
     @PostMapping
     @ApiOperation("Create announcement report")
     @ApiResponses({

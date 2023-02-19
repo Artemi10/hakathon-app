@@ -75,6 +75,14 @@ public class AnnouncementServiceImpl implements AnnouncementService {
         return announcementMapper.toDto(announcement);
     }
 
+    @Override
+    public AnnouncementDto getCurrentExpertAnnouncement(UUID expertId) {
+        Expert expert = expertRepository.findById(expertId)
+                .orElseThrow(EntityNotFoundException::expertNotFoundException);
+        Announcement announcement = expert.getLatestAnnouncement();
+        return announcementMapper.toDto(announcement);
+    }
+
     @Transactional
     @Override
     public AnnouncementReportDto createReport(UUID expertId, List<RiskDto> risksDto) {

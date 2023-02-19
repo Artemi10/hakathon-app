@@ -53,6 +53,9 @@ public class Expert {
     @Column(name = "password")
     private String password;
 
+    @Column(name = "telegram_link")
+    private String telegramLink;
+
     @Enumerated(EnumType.STRING)
     @Column(name = "role")
     private Role role;

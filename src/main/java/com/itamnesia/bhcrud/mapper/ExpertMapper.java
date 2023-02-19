@@ -1,7 +1,7 @@
 package com.itamnesia.bhcrud.mapper;
 
 import com.itamnesia.bhcrud.dto.auth.SignUpDto;
-import com.itamnesia.bhcrud.dto.expert.ExpertDto;
+import com.itamnesia.bhcrud.dto.user.ExpertDto;
 import com.itamnesia.bhcrud.model.user.Expert;
 import com.itamnesia.bhcrud.model.user.Role;
 import org.mapstruct.Mapper;

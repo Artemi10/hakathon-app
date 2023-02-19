@@ -13,5 +13,7 @@ public interface AnnouncementService {
 
     AnnouncementDto getExpertAnnouncement(UUID expertId);
 
+    AnnouncementDto getCurrentExpertAnnouncement(UUID expertId);
+
     AnnouncementReportDto createReport(UUID expertId, List<RiskDto> reportDto);
 }

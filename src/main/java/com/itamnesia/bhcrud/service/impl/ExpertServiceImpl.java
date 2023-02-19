@@ -1,7 +1,7 @@
 package com.itamnesia.bhcrud.service.impl;
 
 import com.itamnesia.bhcrud.dto.announcement.AnnouncementReportDto;
-import com.itamnesia.bhcrud.dto.expert.ExpertDto;
+import com.itamnesia.bhcrud.dto.user.ExpertDto;
 import com.itamnesia.bhcrud.exception.EntityNotFoundException;
 import com.itamnesia.bhcrud.mapper.AnnouncementReportMapper;
 import com.itamnesia.bhcrud.mapper.ExpertMapper;
@@ -44,4 +44,12 @@ public class ExpertServiceImpl implements ExpertService {
         return expertMapper.toDto(expert);
     }
 
+    @Override
+    public ExpertDto addTelegramLink(UUID id, String link) {
+        Expert expert = expertRepository.findById(id)
+                .orElseThrow(EntityNotFoundException::expertNotFoundException);
+        expert.setTelegramLink(link);
+        expert = expertRepository.save(expert);
+        return expertMapper.toDto(expert);
+    }
 }

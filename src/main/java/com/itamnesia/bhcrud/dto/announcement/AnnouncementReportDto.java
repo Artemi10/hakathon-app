@@ -1,6 +1,6 @@
 package com.itamnesia.bhcrud.dto.announcement;
 
-import com.itamnesia.bhcrud.dto.expert.ExpertDto;
+import com.itamnesia.bhcrud.dto.user.ExpertDto;
 import com.itamnesia.bhcrud.dto.risk.RiskDto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
