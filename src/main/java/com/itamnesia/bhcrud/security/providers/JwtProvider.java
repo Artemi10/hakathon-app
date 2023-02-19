@@ -37,7 +37,7 @@ public class JwtProvider implements AuthenticationProvider {
             var role = accessTokenService.getRole(accessToken);
 
             UserPrincipal principal;
-            if (Role.EXPERT.name().equals(role)) {
+            if (Role.EXPERT.name().equals(role) || Role.EXPERT_UNCONFIRMED.name().equals(role)) {
                 principal = expertRepository.findByPhoneNumber(login)
                         .map(UserPrincipal::new)
                         .orElseThrow(() -> new BadCredentialsException("Credentials are invalid"));

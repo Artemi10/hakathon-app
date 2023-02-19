@@ -42,7 +42,8 @@ public class SecurityConfig {
                 .authorizeHttpRequests(configurer -> configurer
                         .antMatchers("/api/v1/announcements/latest").permitAll()
                         .antMatchers("/api/v1/auth/**", "/api/v1/expert/auth/**").permitAll()
-                        .antMatchers("/api/v1/confirmation/**", "/api/v1/expert/confirmation/**").hasAuthority(Role.UNCONFIRMED.name())
+                        .antMatchers("/api/v1/confirmation/**").hasAuthority(Role.ACTIVE_UNCONFIRMED.name())
+                        .antMatchers("/api/v1/expert/confirmation/**").hasAuthority(Role.EXPERT_UNCONFIRMED.name())
                         .antMatchers("/api/v1/announcements/**").hasAuthority(Role.ACTIVE.name())
                         .antMatchers("/api/v1/expert/**").hasAuthority(Role.EXPERT.name())
                         .antMatchers("/api/v1/experts").hasAuthority(Role.ACTIVE.name())

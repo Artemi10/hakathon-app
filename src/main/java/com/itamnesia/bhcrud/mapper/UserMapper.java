@@ -13,6 +13,6 @@ public interface UserMapper {
     @Mapping(target = "middleName", ignore = true)
     @Mapping(target = "id", ignore = true)
     @Mapping(target = "code", ignore = true)
-    @Mapping(target = "role", expression = "java(Role.UNCONFIRMED)")
+    @Mapping(target = "role", expression = "java(Role.ACTIVE_UNCONFIRMED)")
     User toModel(SignUpDto signUpDto);
 }

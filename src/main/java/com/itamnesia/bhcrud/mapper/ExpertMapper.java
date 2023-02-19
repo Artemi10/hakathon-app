@@ -16,9 +16,8 @@ public interface ExpertMapper {
     @Mapping(target = "middleName", ignore = true)
     @Mapping(target = "id", ignore = true)
     @Mapping(target = "code", ignore = true)
-    @Mapping(target = "role", expression = "java(Role.UNCONFIRMED)")
+    @Mapping(target = "role", expression = "java(Role.EXPERT_UNCONFIRMED)")
     Expert toModel(SignUpDto signUpDto);
-
 
     ExpertDto toDto(Expert expert);
 
